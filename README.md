@@ -10,6 +10,7 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 - You can exit duckdb using .exit or simply closing the window
 
 ### Extensions
+- If you will read csv files, it is not mandatory to install the other extensions.
 - The httpfs extension allows you to read and write remote files over HTTP(S) and S3
 `INSTALL httpfs;`
 `LOAD httpfs;`
@@ -35,7 +36,7 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 - If you have a parquet file, it is simple as a csv file
 - If you have a duckdb.file you can easily start duckdb with the name of the file.
 ![alt text](./img/image-5.png)
-- If you already started duckdb with no database file. You can run "attach" and "use" commands
+- If you already started duckdb with no duck file. You can run "attach" and "use" commands
 ![alt text](./img/image-7.png)
 - It is the same process if you want to work with a sqlite file:
 ![alt text](./img/image-6.png)

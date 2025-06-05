@@ -5,7 +5,7 @@ library(data.table)
 dfusers <- data.table(id = c(1, 2, 3),
                     name = c("John", "David", "Joe"))
 
-teams <- data.table(team = c("red", "blue"))
+dfteams <- data.table(team = c("red", "blue"))
 
 dftask <- data.table(task = c("clean", "wipe"))
 
@@ -13,7 +13,7 @@ dftask <- data.table(task = c("clean", "wipe"))
 list_imputs <- list(users = dfusers, teams = dfteams, tasks = dftask)
 
 # you will create a duckdb file in your own current directory
-conduck <- duckdb::dbConnect(duckdb::duckdb(), dbdir = "myduckdbfile.duckdb")
+conduck <- duckdb::dbConnect(duckdb::duckdb(), dbdir = "sample.duckdb")
 
 sapply(names(list_imputs), function(name) {
   dbWriteTable(conduck, name, list_imputs[[name]])
