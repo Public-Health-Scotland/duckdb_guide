@@ -1,9 +1,11 @@
 # duckdb_guide
-DuckDB is an in-process SQL OLAP database management system. Simple, feature-rich, fast & open source
+DuckDB is an in-process SQL OLAP database management system. Simple, feature-rich, fast & open source. If you only want to code in R you have to check R_samples folder.
 
-## Installation for Windows
-- Open a cmd (windows) and run the following command: `winget install DuckDB.DuckDB`
-- You can use the following command to check your installed extension: `SELECT extension_name, installed, description FROM duckdb_extensions()`
+## Windows installation
+- You will have a powerfull tool in your CMD. No need to run R or Python.
+- Open a cmd or Powershell (windows) and run the following command: `winget install DuckDB.DuckDB`
+- Then, you can start using duckdb, you need to run in a cmd the command: duckdb
+- You can use the following command to check your installed extension: `SELECT extension_name, installed, description FROM duckdb_extensions();`
 ![alt text](./img/image-1.png)
 - You can exit duckdb using .exit or simply closing the window
 
