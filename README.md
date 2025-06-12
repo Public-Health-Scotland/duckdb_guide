@@ -29,7 +29,7 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 
 ### How to use duckdb
 - If you already executed duckdb in your PowerShell you won't need to do it again.
-- If you want to read files from your repo and you don't want to deal with absolute/relative long paths. You can use this Windows workaround. Open your file explorer, go to your network folder, keep pressed shift key and right click in an empty space. You will see **Open PowerShell window here**
+- If you want to read files from your network and you don't want to deal with absolute/relative long paths. You can use this Windows workaround. Open your file explorer, go to your network folder, keep pressed shift key and right click in an empty space. You will see **Open PowerShell window here**
 ![alt text](./img/image-8.png)
 - There are 2 very useful commands to check datasets. They are “describe” and “summarize”. In this example, I am using beds.csv
 `describe from file_name.csv`
