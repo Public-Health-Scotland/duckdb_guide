@@ -3,6 +3,7 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 
 ## Windows installation
 - You will have a powerfull tool in your CMD. No need to run R or Python.
+- We will use winget which is an official Microsoft tool (Windows Package Manager). It is **safe** since It pulls packages from the Microsoft Community Package Manifest Repository, which has a review process to ensure packages are safe and legitimate.
 - Open a cmd or Powershell (windows) and run the following command: `winget install DuckDB.DuckDB`
 - Then, you can start using duckdb, you need to run in a cmd the command: duckdb
 - You can use the following command to check your installed extension: `SELECT extension_name, installed, description FROM duckdb_extensions();`
@@ -10,7 +11,7 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 - You can exit duckdb using .exit or simply closing the window
 
 ### Extensions
-- If you will read csv files, it is not mandatory to install the other extensions.
+- If you only read csv files, it is not mandatory to install the other extensions. So, you can skip these extensions installation.
 - The httpfs extension allows you to read and write remote files over HTTP(S) and S3
 `INSTALL httpfs;`
 `LOAD httpfs;`
@@ -24,9 +25,12 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 `INSTALL sqlite_scanner;`
 `LOAD sqlite_scanner;`
 ![alt text](./img/image-2.png)
+- If you cannot install the extensions, it may be your firewall/VPN permissions.
 
 ### How to use duckdb
-- If you already executed duckdb.exe in your PowerShell you won't need to do it again.
+- If you already executed duckdb in your PowerShell you won't need to do it again.
+- If you want to read files from your repo and you don't want to deal with absolute/relative long paths. You can use this Windows workaround. Open your file explorer, go to your network folder, keep pressed shift key and right click in an empty space. You will see **Open PowerShell window here**
+![alt text](./img/image-8.png)
 - There are 2 very useful commands to check datasets. They are “describe” and “summarize”. In this example, I am using beds.csv
 `describe from file_name.csv`
 `summarize from file_name.csv`
