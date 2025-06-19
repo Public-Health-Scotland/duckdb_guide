@@ -2,10 +2,10 @@
 DuckDB is an in-process SQL OLAP database management system. Simple, feature-rich, fast & open source. If you only want to code in R you have to check R_samples folder.
 
 ## Windows installation
-- You will have a powerfull tool in your CMD. No need to run R or Python.
+- You will have a powerfull tool in your CMD/powershell. No need to run R or Python.
 - We will use winget which is an official Microsoft tool (Windows Package Manager). It is **safe** since It pulls packages from the Microsoft Community Package Manifest Repository, which has a review process to ensure packages are safe and legitimate.
-- Open a cmd or Powershell (windows) and run the following command: `winget install DuckDB.DuckDB`
-- Then, you can start using duckdb, you need to run in a cmd the command: duckdb
+- Open a cmd or Powershell (windows) and run the following command: `winget install DuckDB.cli`
+- Then, you can start using duckdb, you need to run the command in a cmd/porwershell: `duckdb`
 - You can use the following command to check your installed extension: `SELECT extension_name, installed, description FROM duckdb_extensions();`
 ![alt text](./img/image-1.png)
 - You can exit duckdb using .exit or simply closing the window
