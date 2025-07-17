@@ -1,4 +1,4 @@
-# duckdb_guide
+F# duckdb_guide
 DuckDB is an in-process SQL OLAP database management system. Simple, feature-rich, fast & open source. If you only want to code in R you have to check R_samples folder.
 
 ## Windows installation
@@ -31,6 +31,7 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 - If you already executed duckdb in your PowerShell you won't need to do it again.
 - If you want to read files from your network and you don't want to deal with absolute/relative long paths. You can use this Windows workaround. Open your file explorer, go to your network folder, keep pressed shift key and right click in an empty space. You will see **Open PowerShell window here**
 ![alt text](./img/image-8.png)
+- You can write SQL in multiline way. Press enter for multiple lines. A colon (;) means the end of a query.
 - There are 2 very useful commands to check datasets. They are “describe” and “summarize”. In this example, I am using beds.csv
 `describe from file_name.csv`
 `summarize from file_name.csv`
@@ -48,6 +49,32 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 `COPY table_name to ‘file_name.csv’ (format ‘csv’);`
 `COPY table_name to ‘file_name.parquet’ (format ‘parquet’);`
 `COPY (select field_name, mean(value) as mean_value from admissions_day group by field_name) to ‘grouped_field_mean.csv’ (format ‘csv’);`
+
+## intermediate SQL commands
+- You can join 2 tables (same file or different files and formats)
+```
+select a.*, b.country
+from read_xlsx('demo.xlsx', sheet='sales') a join read_xlsx('demo.xlsx', sheet='countries') b
+on a.id_country=b.id;
+```
+![alt text](img/image-9.png)
+- You can have multiple subqueries like this:
+```
+WITH cleaned AS (
+  SELECT * FROM read_xlsx('demo.xlsx', sheet='sales')
+  WHERE amount IS NOT NULL
+),
+aggregated AS (
+  SELECT id_country, AVG(amount) as avg_amount
+  FROM cleaned
+  GROUP BY id_country
+)
+select b.country, round(a.avg_amount, 2) as avg_amnt
+from aggregated a join read_xlsx('demo.xlsx', sheet='countries') b
+on a.id_country=b.id
+order by avg_amount desc;
+```
+![alt text](img/image-10.png)
 
 ## Advance SQL commands
 - Regular expressions for column names using columns function
