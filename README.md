@@ -54,10 +54,18 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 - You can join 2 tables (same file or different files and formats)
 ```
 select a.*, b.country
-from read_xlsx('demo.xlsx', sheet='sales') a join read_xlsx('demo.xlsx', sheet='countries') b
+from read_xlsx('demo.xlsx', sheet='sales') a left join read_xlsx('demo.xlsx', sheet='countries') b
 on a.id_country=b.id;
 ```
 ![alt text](img/image-9.png)
+
+```
+select a.*, b.country
+from read_xlsx('demo.xlsx', sheet='sales') a full join read_xlsx('demo.xlsx', sheet='countries') b
+on a.id_country=b.id;
+```
+![alt text](img/image-11.png)
+
 - You can have multiple subqueries like this:
 ```
 WITH cleaned AS (
