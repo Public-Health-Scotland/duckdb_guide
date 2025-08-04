@@ -13,17 +13,25 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 ### Extensions
 - If you only read csv files, it is not mandatory to install the other extensions. So, you can skip these extensions installation.
 - The httpfs extension allows you to read and write remote files over HTTP(S) and S3
-`INSTALL httpfs;`
-`LOAD httpfs;`
+```
+INSTALL httpfs;
+LOAD httpfs;
+```
 - The excel extension enables you to read and write Excel (.xlsx) files
-`INSTALL excel;`
-`LOAD excel;`
+```
+INSTALL excel;
+LOAD excel;
+```
 - The spatial extension provides support for geospatial data processing
-`INSTALL spatial;`
-`LOAD spatial;`
+```
+INSTALL spatial;
+LOAD spatial;
+```
 - The sqlite_scanner extension allows DuckDB to directly read and write data from SQLite database file
-`INSTALL sqlite_scanner;`
-`LOAD sqlite_scanner;`
+```
+INSTALL sqlite_scanner;
+LOAD sqlite_scanner;
+```
 ![alt text](./img/image-2.png)
 - If you cannot install the extensions, it may be your firewall/VPN permissions.
 
