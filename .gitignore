@@ -57,3 +57,6 @@ rsconnect/
 # Generated duckdb files
 data/encrypted_data.duckdb
 data/sample.duckdb
+
+# .env file with sensitive data
+.env
