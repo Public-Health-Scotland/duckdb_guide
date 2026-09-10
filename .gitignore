@@ -56,3 +56,7 @@ rsconnect/
 
 # Python environments
 .venv/
+
+# Generated duckdb files
+data/encrypted_data.duckdb
+data/sample.duckdb

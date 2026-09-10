@@ -2,9 +2,6 @@ library(duckdb)
 library(dotenv)
 library(glue)
 
-# Load .env file
-load_dot_env()
-
 # Define file paths and encryption key
 csv_path <- "data/beds.csv"
 parquet_path <- "data/admissions.parquet"
@@ -58,17 +55,17 @@ dbDisconnect(con, shutdown = TRUE)
 # Test reading the encrypted database
 # -----------------------------------------------------------------------------
 
-con <- dbConnect(
-  duckdb::duckdb(),
-  read_only = TRUE
-)
+# Open DuckDB connection
+con <- dbConnect(duckdb::duckdb())
 
+# attach file in Read only mode
 dbExecute(
   con,
   glue("
   ATTACH '{db_path}' AS enc (
-      ENCRYPTION_KEY '{encryption_key}',
-      ENCRYPTION_CIPHER 'GCM'
+    READ_ONLY,
+    ENCRYPTION_KEY '{encryption_key}',
+    ENCRYPTION_CIPHER 'GCM'
   );
   USE enc;")
 )
@@ -76,11 +73,11 @@ dbExecute(
 df <- dbGetQuery(
   con, "
   SELECT
-    QuarterQF,
+    Quarter,
     HB,
     HBQF,
     Location,
-    LocationQF
+    SpecialtyName
   FROM beds")
 
 dbDisconnect(con, shutdown = TRUE)

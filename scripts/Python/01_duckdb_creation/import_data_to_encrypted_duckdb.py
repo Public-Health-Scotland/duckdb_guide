@@ -1,8 +1,7 @@
-import duckdb
 import os
 from dotenv import load_dotenv
-
-load_dotenv()
+import duckdb
+import pandas as pd
 
 csv_path = "data/beds.csv"
 parquet_path = "data/admissions.parquet"
@@ -41,13 +40,15 @@ print("Successfully created encrypted DuckDB file and imported data.")
 
 con.close()
 
-# Open DuckDB read-only
+# Open DuckDB connection
 con = duckdb.connect()
 
+# attach file in Read only mode
 con.execute(f"""
     INSTALL httpfs;
     LOAD httpfs;
     ATTACH '{db_path}' AS enc (
+        READ_ONLY,
         ENCRYPTION_KEY '{encryption_key}',
         ENCRYPTION_CIPHER 'GCM'
     );
@@ -55,15 +56,15 @@ con.execute(f"""
 """)
 
 df = con.execute("""
-    SELECT
-        QuarterQF,
-        HB,
-        HBQF,
-        Location,
-        LocationQF
-    FROM beds
-""").fetchdf()
+SELECT
+    Quarter,
+    HB,
+    HBQF,
+    Location,
+    SpecialtyName
+FROM beds""").fetchdf()
 
 con.close()
 
+print(df.dtypes)
 print(df)

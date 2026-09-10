@@ -1,6 +1,6 @@
 library(duckdb)
 library(data.table)
-# Duckdb has the capability to create tables in one file
+# Duckdb has the capability to create many tables in one file
 
 dfusers <- data.table(id = c(1, 2, 3),
                     name = c("John", "David", "Joe"))
