@@ -45,6 +45,8 @@ con.close()
 con = duckdb.connect()
 
 con.execute(f"""
+    INSTALL httpfs;
+    LOAD httpfs;
     ATTACH '{db_path}' AS enc (
         ENCRYPTION_KEY '{encryption_key}',
         ENCRYPTION_CIPHER 'GCM'
