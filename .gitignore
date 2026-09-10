@@ -47,3 +47,16 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# IDE temp files
+.vscode/
+
+# Python environments
+.venv/
+
+# Generated duckdb files
+data/encrypted_data.duckdb
+data/sample.duckdb
+
+# .env file with sensitive data
+.env
