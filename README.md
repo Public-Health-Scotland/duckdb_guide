@@ -6,6 +6,8 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 1. DuckDB programming language package: This piece of software allows users to easily integrate DucbDB in R/Python projects.
 2. DuckDB OS tooling: This piece of software can be installed as a OS level (e.g. Windows, Linux). IT has extensions to read Excel files, PostgreSQL, a web based User interface and other interesting features.
 
+Note: The DuckDB packages for R and Python can be installed directly from CRAN and PyPI, respectively. Installation of the DuckDB command-line (OS) tooling is optional and is only required if you intend to use DuckDB outside Posit work bench.
+
 ## More sections
 
 | Topic            | More info                            |
