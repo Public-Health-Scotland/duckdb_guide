@@ -13,6 +13,7 @@ DuckDB is an in-process SQL OLAP database management system. Simple, feature-ric
 | R/Python package | [View scripts examples README](./scripts/README.md) |
 | OS tool          | [View OS tool README](./OS_tool/README.md)          |
 | UI (OS tool)     | [View UI README](./ui/README.md)                    |
+| Common queries   | [View common queries README](./common_queries/)     |
 | DuckDB Views     | [View View README](./view/README.md)                |
 
 ## Resources
