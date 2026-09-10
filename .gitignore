@@ -48,9 +48,6 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 
-# .env file with sensitive data
-.env
-
 # IDE temp files
 .vscode/
 
