@@ -1,22 +1,22 @@
 ## Scripts folder
-This folder contains 2 subfolders which focusses on R and Python scripts examples.
+This folder contains two subfolders focused on R and Python script examples.
 
 | Section         | Location                                       |
 |-----------------|---------------------------------------------------|
 | R examples      | [View R examples README](./R/README.md)           |
-| Python Examples | [View Python examples README](./Python/README.md) |
+| Python examples | [View Python examples README](./Python/README.md) |
 
 ### General knowledge
 
-#### DUCKDB ways to work
-- In memory: when you don't load a duckdb file but you can attach later on.
-- From a duckdb file: when you have a duckdb file or you want to create one
+#### DuckDB ways of working
+- In memory: when you do not load a DuckDB file, but you can attach one later.
+- From a DuckDB file: when you have a DuckDB file or want to create one.
 
 #### SQL statements
-- Duckdb works with SQL statements. If you have a 500 MB csv file and you only want a specify part of the data. You will reduce memory consumption. For example you can run this statement `select id, name from my_data.csv where city = 'New York';`
+- DuckDB works with SQL statements. If you have a 500 MB CSV file and only want to read a specific part of the data, you can reduce memory consumption. For example, you can run this statement: `select id, name from my_data.csv where city = 'New York';`
 
-#### DuckDB can perform better than parquet files with partitioning
-= Hundreds of small parquet files (less than 5 MB each) can slow down when reading those files. Consider migration to duckdb.
-- You can store more than 1 table in a duckdb file
-- You can add a password to encrypt your duckdb file
-- If you have very large files (10 GB each), you can create a master metadata file (in DuckDB or CSV format) because it is a powerful way to track, organize, and query your distributed DuckDB files. It acts like a catalog or index, helping you manage and access your data efficiently. See metadata.csv
+#### DuckDB can perform better than Parquet files with partitioning
+- Hundreds of small Parquet files (less than 5 MB each) can slow down reads. Consider migrating to DuckDB.
+- You can store more than one table in a DuckDB file.
+- You can add a password to encrypt your DuckDB file.
+- If you have very large files (10 GB each), you can create a master metadata file (in DuckDB or CSV format). This is a powerful way to track, organise, and query distributed DuckDB files. It acts like a catalog or index, helping you manage and access your data efficiently. See `metadata.csv`.

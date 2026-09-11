@@ -1,10 +1,10 @@
 ## Common queries
-These are example queries that you can run in the terminal (OS tool), the web user interface (OS tool extension), or as part of an R or Python script. The project includes a data folder containing common file types that you can use to practise your queries.
+These example queries can be run in the terminal (OS tool), the web user interface (OS tool extension), or as part of an R or Python script. The project includes a data folder containing common file types that you can use to practise your queries.
 
 ### Initial SQL commands
-The images shown below display the results obtained from running the queries in the Windows terminal.
+The images below show the results obtained from running the queries in the Windows terminal.
 
--   There are 2 very useful commands to check datasets. They are “describe” and “summarize”. In this example, I am using beds.csv `describe from file_name.csv` or `summarize from file_name.csv`
+-   There are two very useful commands for checking datasets: “describe” and “summarize”. In this example, I am using beds.csv: `describe from file_name.csv` or `summarize from file_name.csv`.
 
 ![a summarise and describe SQL command example](./img/image-3.png)
 
@@ -14,9 +14,9 @@ The images shown below display the results obtained from running the queries in 
 
 -   If you have a parquet file, it is simple as a csv file
 
--   If you have a duckdb.file you can easily start duckdb with the name of the file.
+-   If you have a DuckDB.file you can easily start duckdb with the name of the file.
 
-![how to open a duckdb file](./img/image-5.png)
+![how to open a DuckDB file](./img/image-5.png)
 
 -   If you already started duckdb with no duck file. You can run "attach" and "use" commands
 
@@ -28,7 +28,7 @@ The images shown below display the results obtained from running the queries in 
 
 -   If you want to export one table from a duckdb or sqlite database, you can use the command COPY `COPY table_name to ‘file_name.csv’ (format ‘csv’);` `COPY table_name to ‘file_name.parquet’ (format ‘parquet’);` `COPY (select field_name, mean(value) as mean_value from admissions_day group by field_name) to ‘grouped_field_mean.csv’ (format ‘csv’);`
 
-### intermediate SQL commands
+### Intermediate SQL commands
 
 -   You can join 2 tables (same file or different files and formats)
 
@@ -68,7 +68,7 @@ order by avg_amount desc;
 
 ![multiple subqueries to calculate an average value per country](img/image-10.png)
 
-### Advance SQL commands
+### Advanced SQL commands
 
 -   Regular expressions for column names using columns function `select HB, columns('Average.*') from beds.csv;`
 -   We can create the pivot of a table `PIVOT beds.csv ON Quarter USING MEAN(PercentageOccupancy) GROUP BY HB;`

@@ -1,6 +1,6 @@
 library(duckdb)
 
-# Create a connection without a duckdb file
+# Create an in-memory connection
 con <- dbConnect(duckdb::duckdb())
 
 # Attach multiple databases wuth the same table structure
@@ -15,3 +15,6 @@ result <- dbGetQuery(con, "
   SELECT col1, col2 FROM db2024.my_table
   WHERE some_column = 'value'
 ")
+
+dbDisconnect(con, shutdown = TRUE)
+print(result)

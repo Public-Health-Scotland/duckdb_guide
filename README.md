@@ -1,22 +1,22 @@
 # DuckDB guide
 
-DuckDB is an in-process SQL OLAP database management system. Simple, feature-rich, fast & open source. The recommended version is 1.4.4 (February 2026). If you only want to code in R you have to check R_samples folder.
+DuckDB is an in-process SQL OLAP database management system. It is simple, feature-rich, fast, and open source. The recommended version is 1.4.4 (February 2026). If you only want to code in R, check the `R_samples` folder.
 
 ## DuckDB ecosystem
-1. DuckDB programming language package: This piece of software allows users to easily integrate DucbDB in R/Python projects.
-2. DuckDB OS tooling: This piece of software can be installed as a OS level (e.g. Windows, Linux). IT has extensions to read Excel files, PostgreSQL, a web based User interface and other interesting features.
+1. DuckDB programming language package: This software allows users to easily integrate DuckDB in R/Python projects.
+2. DuckDB OS tooling: This software can be installed at the operating-system level (e.g. Windows, Linux). It has extensions to read Excel files, PostgreSQL, a web-based user interface, and other interesting features.
 
-Note: The DuckDB packages for R and Python can be installed directly from CRAN and PyPI, respectively. Installation of the DuckDB command-line (OS) tooling is optional and is only required if you intend to use DuckDB outside Posit work bench.
+Note: The DuckDB packages for R and Python can be installed directly from CRAN and PyPI, respectively. Installation of the DuckDB command-line (OS) tooling is optional and is only required if you intend to use DuckDB outside Posit Workbench.
 
 ## More sections
 
 | Topic            | More info                            |
 |------------------|--------------------------------------|
-| R/Python package | [View scripts examples README](./scripts/README.md) |
+| R/Python package | [View script examples README](./scripts/README.md) |
 | OS tool          | [View OS tool README](./OS_tool/README.md)          |
 | UI (OS tool)     | [View UI README](./ui/README.md)                    |
 | Common queries   | [View common queries README](./common_queries/)     |
-| DuckDB Views     | [View View README](./view/README.md)                |
+| DuckDB views     | [View views README](./view/README.md)                |
 
 ## Resources
 
